@@ -1,0 +1,11 @@
+# See <http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html>.
+# License: public domain.
+
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    echo >&2 "Warning: XDG_RUNTIME_DIR environment variable was not set."
+    XDG_RUNTIME_DIR="${TMPDIR:-/tmp}/runtime-dir-$UID"
+    if ! [ -d "$XDG_RUNTIME_DIR" ]; then
+        mkdir -p "$XDG_RUNTIME_DIR"
+        chmod 0700 "$XDG_RUNTIME_DIR"
+    fi
+fi
