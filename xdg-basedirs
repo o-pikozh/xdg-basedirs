@@ -1,10 +1,8 @@
 # See <http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html>.
 # License: public domain.
 
-if [ -z "$XDG_DATA_HOME" ]; then XDG_DATA_HOME="$HOME/.local/share"; fi
-if [ -z "$XDG_CONFIG_HOME" ]; then XDG_CONFIG_HOME="$HOME/.config"; fi
-
-if [ -z "$XDG_DATA_DIRS" ]; then XDG_DATA_DIRS="/usr/local/share/:/usr/share/"; fi
-if [ -z "$XDG_CONFIG_DIRS" ]; then XDG_CONFIG_DIRS="/etc/xdg"; fi
-
-if [ -z "$XDG_CACHE_HOME" ]; then XDG_CACHE_HOME="$HOME/.cache"; fi
+: ${XDG_DATA_HOME:=$HOME/.local/share}
+: ${XDG_CONFIG_HOME:=$HOME/.config}
+: ${XDG_DATA_DIRS:=/usr/local/share/:/usr/share/}
+: ${XDG_CONFIG_DIRS:=/etc/xdg}
+: ${XDG_CACHE_HOME:=$HOME/.cache}
